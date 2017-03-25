@@ -1,41 +1,83 @@
-# Petitest::Dsl
+# Petitest::DSL
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/petitest/dsl`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+DSL for [Petitest](https://github.com/petitest/petitest-dsl).
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'petitest-dsl'
+gem "petitest-dsl"
 ```
 
 And then execute:
 
-    $ bundle
+```bash
+bundle
+```
 
 Or install it yourself as:
 
-    $ gem install petitest-dsl
+```bash
+gem install petitest-dsl
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+Require `"petitest/dsl"` and extend `Petitest::DSL` into your test class.
 
-## Development
+```ruby
+require "petitest/autorun"
+require "petitest/dsl"
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+class ExampleTest < Petitest::Test
+  extend ::Petitest::DSL
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+  # ... your tests ...
+end
+```
 
-## Contributing
+### .desc
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/r7kamura/petitest-dsl.
+Set a description to the following test.
 
+```ruby
+desc "description for this test"
+def test_foo
+  assert { foo }
+end
+```
 
-## License
+### .test
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+Define a test with a given description.
 
+```ruby
+test "description for this test" do
+  assert { foo }
+end
+```
+
+Define a skkipped test.
+
+```ruby
+test "description for this test"
+```
+
+### .sub_test
+
+Nest test groups.
+
+```ruby
+sub_test "bar" do
+  test "baz" do
+    assert { baz }
+  end
+
+  sub_test "boo" do
+    test "boz" do
+      assert { boz }
+    end
+  end
+end
+```
