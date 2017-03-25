@@ -1,5 +1,8 @@
 # Petitest::DSL
 
+[![Gem Version](https://badge.fury.io/rb/petitest-dsl.svg)](https://rubygems.org/gems/petitest-dsl)
+[![Documentation](http://img.shields.io/badge/docs-rdoc.info-blue.svg)](http://www.rubydoc.info/github/petitest/petitest-dsl)
+
 DSL for [Petitest](https://github.com/petitest/petitest-dsl).
 
 ## Installation
