@@ -4,7 +4,7 @@ require "petitest/dsl/version"
 
 Gem::Specification.new do |spec|
   spec.name = "petitest-dsl"
-  spec.version = Petitest::Dsl::VERSION
+  spec.version = Petitest::DSL::VERSION
   spec.authors = ["Ryo Nakamura"]
   spec.email = ["r7kamura@gmail.com"]
   spec.summary = "DSL for Petitest."

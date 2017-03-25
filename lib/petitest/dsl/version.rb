@@ -1,5 +1,5 @@
 module Petitest
-  module Dsl
-    VERSION = "0.1.0"
+  module DSL
+    VERSION = "0.3.0"
   end
 end
