@@ -27,7 +27,7 @@ gem install petitest-dsl
 
 ## Usage
 
-Require `"petitest/dsl"` and extend `Petitest::DSL` into your test class.
+Require `"petitest/dsl"` and extend `Petitest::DSL` into your test classes.
 
 ```ruby
 require "petitest/autorun"
@@ -69,7 +69,7 @@ test "description for this test"
 
 ### .sub_test
 
-Nest test groups.
+Nest a test group.
 
 ```ruby
 sub_test "bar" do
